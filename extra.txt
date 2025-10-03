@@ -1,0 +1,7 @@
+<h3>${title}</h3>
+          <p>${message}</p>
+          <hr/>
+          <p><strong>Block:</strong> ${unit.block_name}, 
+             <strong>Floor:</strong> ${unit.floor_number}, 
+             <strong>Office:</strong> ${unit.office_number}</p>
+          <small>Powered by Society Management System</small>
