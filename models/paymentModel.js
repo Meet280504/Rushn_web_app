@@ -3,13 +3,26 @@ const pool = require("../config/db");
 const Payment = {
   // Get all payments (Admin view)
   getAll: async () => {
+    // const [rows] = await pool.query(`
+    //   SELECT p.*, u.firstName AS user_name, u.email AS user_email, o.order_id AS related_order
+    //   FROM payments p
+    //   JOIN users u ON p.user_id = u.user_id
+    //   JOIN orders o ON p.order_id = o.order_id
+    //   JOIN payment_methods pm ON p.method_id = pm.method_id
+    // `);
     const [rows] = await pool.query(`
-      SELECT p.*, u.firstName AS user_name, u.email AS user_email, o.order_id AS related_order
-      FROM payments p
-      JOIN users u ON p.user_id = u.user_id
-      JOIN orders o ON p.order_id = o.order_id
-      JOIN payment_methods pm ON p.method_id = pm.method_id
-    `);
+  SELECT 
+    p.*, 
+    u.firstName AS user_name, 
+    u.email AS user_email, 
+    o.order_id AS related_order, 
+    pm.name AS payment_method
+  FROM payments p
+  LEFT JOIN users u ON p.user_id = u.user_id
+  LEFT JOIN orders o ON p.order_id = o.order_id
+  LEFT JOIN payment_methods pm ON p.method_id = pm.method_id
+  ORDER BY p.payment_id DESC
+`);
     return rows;
   },
 

@@ -7,10 +7,11 @@ const { checkTokenExpiry, checkTokenRole } = require("../middleware/authMiddlewa
 router.post("/create", checkTokenExpiry, checkTokenRole("user"), orderController.createOrder);
 router.get("/my", checkTokenExpiry, checkTokenRole("user"), orderController.getUserOrders);
 router.get("/:order_id", checkTokenExpiry, checkTokenRole("user"), orderController.getOrderById);
-router.delete("/delete/:order_id", checkTokenExpiry, checkTokenRole("user"), orderController.deleteOrder);
+router.delete("/delete/:order_id", checkTokenExpiry, checkTokenRole("admin"), orderController.deleteOrder);
 
 // Admin routes
 router.get("/", checkTokenExpiry, checkTokenRole("admin"), orderController.getAllOrders);
 router.put("/:order_id/status", checkTokenExpiry, checkTokenRole("admin"), orderController.updateOrderStatus);
 
 module.exports = router;
+

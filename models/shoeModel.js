@@ -29,28 +29,33 @@ const Shoe = {
       shoe_description,
       original_price,
       price,
-      discount,
+      discount = 0,
       image_url,
       user_id
     } = data;
+
+    // Basic validation
+    if (!category_id || !shoe_name || !original_price || !price) {
+      throw new Error("Missing required fields");
+    }
 
     const [result] = await pool.query(
       `INSERT INTO shoes 
        (category_id, user_id, brand_name, brand_logo, shoe_name, shoe_description, original_price, price, discount, image_url, created_by, updated_by) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        category_id,
-        user_id,
-        brand_name,
-        brand_logo,
+        Number(category_id),
+        Number(user_id),
+        brand_name || null,
+        brand_logo || null,
         shoe_name,
-        shoe_description,
-        original_price,
-        price,
-        discount,
-        image_url,
-        user_id, // created_by
-        user_id  // updated_by (initially same as creator)
+        shoe_description || null,
+        Number(original_price),
+        Number(price),
+        Number(discount),
+        image_url || null,
+        Number(user_id), // created_by
+        Number(user_id)  // updated_by
       ]
     );
     return result.insertId;
@@ -75,17 +80,17 @@ const Shoe = {
        SET category_id=?, brand_name=?, brand_logo=?, shoe_name=?, shoe_description=?, original_price=?, price=?, discount=?, image_url=?, updated_by=? 
        WHERE shoes_id=?`,
       [
-        category_id,
+        Number(category_id),
         brand_name,
         brand_logo,
         shoe_name,
         shoe_description,
-        original_price,
-        price,
-        discount,
-        image_url,
-        user_id, // updated_by (from token)
-        shoes_id
+        Number(original_price),
+        Number(price),
+        Number(discount),
+        image_url || null,
+        Number(user_id), // updated_by (from token)
+        Number(shoes_id)
       ]
     );
     return result.affectedRows;

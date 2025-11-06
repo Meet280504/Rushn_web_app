@@ -17,16 +17,17 @@ const Orders = {
   // Get all orders (Admin view)
   getAll: async () => {
     const [rows] = await pool.query(
-      `SELECT o.*, u.firstName AS user_name, u.email AS user_email, s.shoe_name AS shoe_real_name, s.original_price AS original_price, s.price AS shoe_price, s.image_url AS shoe_image, o.voucher_id AS voucher_id, v.code AS voucher_code, v.discount_value AS discount_amount
+      `SELECT o.*, u.firstName AS user_name, u.email AS user_email, s.shoe_name AS shoe_real_name, s.original_price AS original_price, s.price AS shoe_price, s.image_url AS shoe_image, o.voucher_id AS voucher_id, v.code AS voucher_code, v.discount_value AS discount_amount, sa.recipient_name AS shipping_recipient_name, sa.phone_number AS shipping_phone_number, sa.full_address AS shipping_full_address
        FROM orders o
        JOIN users u ON o.user_id = u.user_id
        JOIN shoes s ON o.shoes_id = s.shoes_id
-       LEFT JOIN vouchers v ON o.voucher_id = v.voucher_id`
+       LEFT JOIN vouchers v ON o.voucher_id = v.voucher_id
+       LEFT JOIN shipping_address sa ON o.user_id = sa.user_id`
     );
     return rows;
   },
 
-  // Get order by ID
+  // Get order by ID 
   getById: async (order_id) => {
     const [rows] = await pool.query(
       `SELECT o.*, 
@@ -38,35 +39,67 @@ const Orders = {
               s.image_url AS shoe_image, 
               o.voucher_id AS voucher_id, 
               v.code AS voucher_code, 
-              v.discount_value AS discount_amount
+              v.discount_value AS discount_amount,
+              sa.recipient_name AS shipping_recipient_name,
+              sa.phone_number AS shipping_phone_number,
+              sa.full_address AS shipping_full_address
       FROM orders o
       JOIN users u ON o.user_id = u.user_id
       JOIN shoes s ON o.shoes_id = s.shoes_id
       LEFT JOIN vouchers v ON o.voucher_id = v.voucher_id
+      LEFT JOIN shipping_address sa ON o.user_id = sa.user_id
       WHERE o.order_id = ?`,
       [order_id]
     );
     return rows[0];
   },
 
-  // Get all orders of a user
+  // // Get all orders of a user
+  // getByUserId: async (user_id) => {
+  //   const [rows] = await pool.query(
+  //     `SELECT o.*, 
+  //             u.firstName AS user_name, 
+  //             u.email AS user_email, 
+  //             s.shoe_name AS shoe_real_name, 
+  //             s.original_price AS original_price, 
+  //             s.price AS shoe_price, 
+  //             s.image_url AS shoe_image, 
+  //             o.voucher_id AS voucher_id, 
+  //             v.code AS voucher_code, 
+  //             v.discount_value AS discount_amount
+  //     FROM orders o
+  //     JOIN users u ON o.user_id = u.user_id
+  //     JOIN shoes s ON o.shoes_id = s.shoes_id
+  //     LEFT JOIN vouchers v ON o.voucher_id = v.voucher_id
+  //     WHERE o.user_id = ?`,
+  //     [user_id]
+  //   );
+  //   return rows;
+  // },
+
+  // Get all orders of a user (with only shipping details)
   getByUserId: async (user_id) => {
     const [rows] = await pool.query(
-      `SELECT o.*, 
-              u.firstName AS user_name, 
-              u.email AS user_email, 
-              s.shoe_name AS shoe_real_name, 
-              s.original_price AS original_price, 
-              s.price AS shoe_price, 
-              s.image_url AS shoe_image, 
-              o.voucher_id AS voucher_id, 
-              v.code AS voucher_code, 
-              v.discount_value AS discount_amount
-      FROM orders o
-      JOIN users u ON o.user_id = u.user_id
-      JOIN shoes s ON o.shoes_id = s.shoes_id
-      LEFT JOIN vouchers v ON o.voucher_id = v.voucher_id
-      WHERE o.user_id = ?`,
+      `SELECT 
+        o.*, 
+        u.firstName AS user_name, 
+        u.email AS user_email, 
+        s.shoe_name AS shoe_real_name, 
+        s.original_price AS original_price, 
+        s.price AS shoe_price, 
+        s.image_url AS shoe_image, 
+        o.voucher_id AS voucher_id, 
+        v.code AS voucher_code, 
+        v.discount_value AS discount_amount,
+        sa.recipient_name AS shipping_recipient_name,
+        sa.phone_number AS shipping_phone_number,
+        sa.full_address AS shipping_full_address
+    FROM orders o
+    JOIN users u ON o.user_id = u.user_id
+    JOIN shoes s ON o.shoes_id = s.shoes_id
+    LEFT JOIN vouchers v ON o.voucher_id = v.voucher_id
+    LEFT JOIN shipping_address sa ON o.user_id = sa.user_id
+    WHERE o.user_id = ?`,
       [user_id]
     );
     return rows;

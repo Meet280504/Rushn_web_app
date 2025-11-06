@@ -34,17 +34,37 @@ exports.getShoesByCategory = async (req, res) => {
 // Create new shoe
 exports.createShoe = async (req, res) => {
   try {
+    // console.log("req.body:", req.body);
+    // console.log("req.file:", req.file);
+
     const userId = req.user.userId; // 👈 from token
+    const { category_id, brand_name, brand_logo, shoe_name, shoe_description, original_price, price, discount } = req.body;
+
+    // Use uploaded file if exists
+    const image_url = req.file ? `/uploads/${req.file.filename}` : null;
 
     const newShoe = {
-      ...req.body,
+      category_id,
+      brand_name,
+      brand_logo,
+      shoe_name,
+      shoe_description,
+      original_price,
+      price,
+      discount: discount || 0,
+      image_url,
       user_id: userId
     };
+    // const newShoe = {
+    //   ...req.body,
+    //   user_id: userId
+    // };
 
     const shoeId = await Shoe.create(newShoe);
     res.status(201).json({ message: "Shoe created successfully", shoeId });
   } catch (error) {
-    res.status(500).json({ message: "Error creating shoe", error });
+    console.error("Shoe creation error:", error);
+    res.status(500).json({ message: "Error creating shoe", error: error.message });// Send error message for better debugging
   }
 };
 
@@ -54,8 +74,17 @@ exports.updateShoe = async (req, res) => {
     const userId = req.user.userId; // 👈 from token
 
     const updatedData = {
-      ...req.body,
-      user_id: userId
+      category_id,
+      brand_name,
+      brand_logo,
+      shoe_name,
+      shoe_description,
+      original_price,
+      price,
+      discount: discount || 0,
+      image_url: req.file ? `/uploads/${req.file.filename}` : null, // Use new upload or existing URL
+      user_id: userId,
+      shoes_id: req.params.shoes_id,
     };
 
     const updated = await Shoe.update(req.params.shoes_id, updatedData);

@@ -12,7 +12,7 @@ router.get("/stats/overall", reviewController.getOverallStats);     // GET overa
 // Protected routes (need login)
 router.get("/user/my", checkTokenExpiry, checkTokenRole("user"), reviewController.getReviewsByUser); // GET my reviews
 router.post("/add", checkTokenExpiry, checkTokenRole("user"), reviewController.createReview);           // CREATE review
-router.put("/update/:review_id", checkTokenExpiry, checkTokenRole("user"), reviewController.updateReview);  // UPDATE review
-router.delete("/delete/:review_id", checkTokenExpiry, checkTokenRole("user"), reviewController.deleteReview); // DELETE review
+router.put("/update/:review_id", checkTokenExpiry, checkTokenRole("admin"), reviewController.updateReview);  // UPDATE review
+router.delete("/delete/:review_id", checkTokenExpiry, checkTokenRole("admin"), reviewController.deleteReview); // DELETE review
 
 module.exports = router;
