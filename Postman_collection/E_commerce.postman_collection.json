@@ -3,8 +3,7 @@
 		"_postman_id": "921f09da-3e69-48f2-b3f3-20e30f6ac06c",
 		"name": "E_commerce",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39107941",
-		"_collection_link": "https://register-7882.postman.co/workspace/Register~7234bfa4-1159-4117-8b52-d50aec1ca88d/collection/39107941-921f09da-3e69-48f2-b3f3-20e30f6ac06c?action=share&source=collection_link&creator=39107941"
+		"_exporter_id": "39107941"
 	},
 	"item": [
 		{
@@ -26,7 +25,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"Meet\",\r\n  \"lastName\": \"Shah\",\r\n  \"dateOfBirth\": \"2003-11-12\",\r\n  \"gender\": \"Male\",\r\n  \"email\": \"meetshah2854@gmail.com\",\r\n  \"phone\": \"1238569460\",\r\n  \"password\": \"meet@2854\",\r\n  \"role\": \"admin\",\r\n  \"isActive\": \"1\"\r\n}\r\n"
+							"raw": "{\r\n  \"firstName\": \"Meet\",\r\n  \"lastName\": \"Chikani\",\r\n  \"dateOfBirth\": \"2003-01-12\",\r\n  \"gender\": \"Male\",\r\n  \"email\": \"meet1234@gmail.com\",\r\n  \"phone\": \"1238569460\",\r\n  \"password\": \"meet1234\",\r\n  \"role\": \"admin\",\r\n  \"isActive\": \"1\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/auth/user/register",
@@ -71,7 +70,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"meetshah2854@gmail.com\",\r\n    \"password\": \"meet@2854\"\r\n}",
+							"raw": "    {\r\n        \"email\": \"meetshah2854@gmail.com\",\r\n        \"password\": \"meet@2854\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -176,6 +175,16 @@
 				{
 					"name": "Get All Users",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -203,7 +212,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzYwMzc4MCwiZXhwIjoxNzU4MjA4NTgwfQ.dZfrvel0Hg3XcfPLHVd--nkqmGkjCmkM-LrY0GF2WaY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -247,7 +256,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkyMTQ1NywiZXhwIjoxNzU4NTI2MjU3fQ.hMrbdxvp4bv2VlOCg9ZW_nLHefYo1ZXgBNPvlVfzOZs",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -291,7 +300,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/category/get-all",
+							"raw": "http://localhost:5000/api/category/categories",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -300,7 +309,7 @@
 							"path": [
 								"api",
 								"category",
-								"get-all"
+								"categories"
 							]
 						}
 					},
@@ -336,6 +345,16 @@
 				{
 					"name": "Update Category",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -354,7 +373,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/category/update/:category_id",
+							"raw": "http://localhost:5000/api/category/update/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -364,12 +383,12 @@
 								"api",
 								"category",
 								"update",
-								":category_id"
+								":id"
 							],
 							"variable": [
 								{
-									"key": "category_id",
-									"value": "9"
+									"key": "id",
+									"value": "3"
 								}
 							]
 						}
@@ -379,10 +398,20 @@
 				{
 					"name": "Delete Category",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/category/delete/:category_id",
+							"raw": "http://localhost:5000/api/category/delete/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -392,11 +421,11 @@
 								"api",
 								"category",
 								"delete",
-								":category_id"
+								":id"
 							],
 							"variable": [
 								{
-									"key": "category_id",
+									"key": "id",
 									"value": "9"
 								}
 							]
@@ -417,7 +446,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkyNDk4MSwiZXhwIjoxNzU4NTI5NzgxfQ.5TQfIUzyOIFvCxF2ZKFZDZ_yA_S6VLJj8f571TL0zSw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -536,6 +565,16 @@
 				{
 					"name": "Update Shoes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -546,7 +585,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"category_id\": 3,\r\n    \"brand_name\": \"ASIAN\",\r\n    \"brand_logo\": \"/Users/urvi/Desktop/ecommerce/ecommerce/ecommerce/Assets/logo-8.png\",\r\n    \"shoe_name\": \"AIR 50\",\r\n    \"shoe_description\": \"The Air Max 90 LV8 takes your favourite silhouette to the next level with stacked Nike Air units.\",\r\n    \"price\": \"1000.00\",\r\n    \"discount\": \"10\",\r\n    \"image_url\": \"C:/Users/urvi/Downloads/Flash Sale Image.png\"\r\n}",
+							"raw": "{\r\n    \"category_id\": 6,\r\n    \"brand_name\": \"NIKE\",\r\n    \"brand_logo\": \"/Users/urvi/Desktop/ecommerce/ecommerce/ecommerce/Assets/logo-4.png\",\r\n    \"shoe_name\": \"RS\",\r\n    \"shoe_description\": \"The Air Max 90 LV8 takes your favourite silhouette to the next level with stacked Nike Air units.\",\r\n    \"original_price\": \"3000.00\",\r\n    \"price\": \"450.00\",\r\n    \"discount\": \"25\",\r\n    \"image_url\": \"C:/Users/urvi/Desktop/ecommerce/ecommerce/ecommerce/Assets/S6.png\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -569,7 +608,7 @@
 							"variable": [
 								{
 									"key": "shoes_id",
-									"value": "3"
+									"value": "8"
 								}
 							]
 						}
@@ -627,7 +666,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkzODEwNCwiZXhwIjoxNzU4NTQyOTA0fQ.1yq--nWNERqbxkI-ySIwfCIdKACghoM6DdSN-QULtU8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -802,7 +841,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkzODEwNCwiZXhwIjoxNzU4NTQyOTA0fQ.1yq--nWNERqbxkI-ySIwfCIdKACghoM6DdSN-QULtU8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -835,7 +874,7 @@
 							"variable": [
 								{
 									"key": "color_id",
-									"value": "5"
+									"value": "7"
 								}
 							]
 						}
@@ -855,7 +894,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkzODEwNCwiZXhwIjoxNzU4NTQyOTA0fQ.1yq--nWNERqbxkI-ySIwfCIdKACghoM6DdSN-QULtU8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODYzNTA0OCwiZXhwIjoxNzU5MjM5ODQ4fQ.yG5G5d3XHckefa_7t1fiUeOBdpRnyMYLKdUw1Ec__4k",
 									"type": "string"
 								}
 							]
@@ -870,7 +909,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"product_name\": \"Boots Timberland\",\r\n    \"product_category\": \"Outdoor shoes\",\r\n    \"image_url\": \"../assets/S2.png\"\r\n}",
+							"raw": "{\r\n    \"product_name\": \"Boots Campus\",\r\n    \"product_category\": \"Sports shoes\",\r\n    \"image_url\": \"../assets/S6.png\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -934,7 +973,7 @@
 							"variable": [
 								{
 									"key": "arrival_id",
-									"value": "4"
+									"value": "6"
 								}
 							]
 						}
@@ -949,7 +988,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkzODEwNCwiZXhwIjoxNzU4NTQyOTA0fQ.1yq--nWNERqbxkI-ySIwfCIdKACghoM6DdSN-QULtU8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODYzNTA0OCwiZXhwIjoxNzU5MjM5ODQ4fQ.yG5G5d3XHckefa_7t1fiUeOBdpRnyMYLKdUw1Ec__4k",
 									"type": "string"
 								}
 							]
@@ -964,7 +1003,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"product_name\": \"Shoes Timberland\",\r\n    \"product_category\": \"RUnning Shoes\",\r\n    \"image_url\": \"../assets/S3.png\"\r\n}",
+							"raw": "{\r\n    \"product_name\": \"Campus Shoes\",\r\n    \"product_category\": \"RUnning Shoes\",\r\n    \"image_url\": \"../assets/S6.png\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -987,7 +1026,7 @@
 							"variable": [
 								{
 									"key": "arrival_id",
-									"value": "4"
+									"value": "6"
 								}
 							]
 						}
@@ -1002,7 +1041,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1NzkzODEwNCwiZXhwIjoxNzU4NTQyOTA0fQ.1yq--nWNERqbxkI-ySIwfCIdKACghoM6DdSN-QULtU8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODYzNTA0OCwiZXhwIjoxNzU5MjM5ODQ4fQ.yG5G5d3XHckefa_7t1fiUeOBdpRnyMYLKdUw1Ec__4k",
 									"type": "string"
 								}
 							]
@@ -1025,7 +1064,7 @@
 							"variable": [
 								{
 									"key": "arrival_id",
-									"value": "4"
+									"value": "6"
 								}
 							]
 						}
@@ -1045,7 +1084,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMTE5MiwiZXhwIjoxNzU4NjE1OTkyfQ.96LP0HUXkd5Qsf60_XB731j0M_g8LuVKTLHrCysxC98",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODc5NDMwOSwiZXhwIjoxNzU5Mzk5MTA5fQ.Jw-gsm_IsGWM1AptoMibDMmbfJKR93lbQq6o5bQ_tkI",
 									"type": "string"
 								}
 							]
@@ -1060,7 +1099,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Buy One Get One Free\",\r\n  \"code\": \"BOGO092025\",\r\n  \"description\": \"Buy one item and get another free. Applicable on select categories.\",\r\n  \"discount_type\": \"bogo\",\r\n  \"discount_value\": \"0\",\r\n  \"min_purchase\": null,\r\n  \"applicable_items\": [\"shoes\"],\r\n  \"first_purchase_only\": true,\r\n  \"start_date\": \"2025-09-16\",\r\n  \"end_date\": \"2025-09-18\",\r\n  \"is_active\": true,\r\n  \"created_by\": 1\r\n}\r\n",
+							"raw": "{\r\n  \"title\": \"Weekend Flash Sale - 30% Off\",\r\n  \"code\": \"WEEKEND30092025\",\r\n  \"description\": \"Flat 30% off on all fashion items this weekend only.\",\r\n  \"discount_type\": \"percentage\",\r\n  \"discount_value\": \"30\",\r\n  \"min_purchase\": null,\r\n  \"applicable_items\": [\"fashion\"],\r\n  \"first_purchase_only\": false,\r\n  \"start_date\": \"2025-09-27\",\r\n  \"end_date\": \"2025-09-28\",\r\n  \"is_active\": true,\r\n  \"created_by\": 2\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1087,7 +1126,20 @@
 					"name": "Get All Vouchers",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/vouchers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vouchers",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -1095,15 +1147,59 @@
 					"name": "Get Voucher By Id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/vouchers/get/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vouchers",
+								"get",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "19"
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Get Active Vouchers List",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODc5NDMwOSwiZXhwIjoxNzU5Mzk5MTA5fQ.Jw-gsm_IsGWM1AptoMibDMmbfJKR93lbQq6o5bQ_tkI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/vouchers/active/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vouchers",
+								"active",
+								"list"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1115,7 +1211,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDEyMTM5LCJleHAiOjE3NTg2MTY5Mzl9.jcUJR1e6lyjSDs1wv80BVoVDbP7ZWheplrC5nhbjXmU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4Nzk0ODk1LCJleHAiOjE3NTkzOTk2OTV9.Ls6RvyAl45KmemhQuLR_pv1Z_FWhX1HbuKFmO41gaKw",
 									"type": "string"
 								}
 							]
@@ -1130,7 +1226,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"code\": \"FREESHIP\",\r\n  \"purchaseAmount\": 999,\r\n  \"isFirstPurchase\": false\r\n}\r\n",
+							"raw": "{\r\n  \"code\": \"FLAT20SEP\",\r\n  \"purchaseAmount\": 999,\r\n  \"isFirstPurchase\": false\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1161,7 +1257,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODc5NDk2OSwiZXhwIjoxNzU5Mzk5NzY5fQ.Hj84J4-Z-7Sc-xKzZHDVDRCY_M9vjZK0t5nJDW6Azc8",
 									"type": "string"
 								}
 							]
@@ -1176,7 +1272,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Buy One Get One Free\",\r\n  \"code\": \"BOGO102025\",\r\n  \"description\": \"Buy one item and get another free. Applicable on select categories.\",\r\n  \"discount_type\": \"bogo\",\r\n  \"discount_value\": \"0\",\r\n  \"min_purchase\": null,\r\n  \"applicable_items\": [\"shoes\"],\r\n  \"first_purchase_only\": true,\r\n  \"start_date\": \"2025-09-16\",\r\n  \"end_date\": \"2025-09-18\",\r\n  \"is_active\": true,\r\n  \"created_by\": 1\r\n}\r\n"
+							"raw": "{\r\n  \"title\": \"Buy One Get One Free\",\r\n  \"code\": \"BOGO102025\",\r\n  \"description\": \"Buy one item and get another free. Applicable on select categories.\",\r\n  \"discount_type\": \"bogo\",\r\n  \"discount_value\": \"0\",\r\n  \"min_purchase\": null,\r\n  \"applicable_items\": [\"shoes\"],\r\n  \"first_purchase_only\": true,\r\n  \"start_date\": \"2025-09-25\",\r\n  \"end_date\": \"2025-09-28\",\r\n  \"is_active\": true,\r\n  \"created_by\": 1\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/vouchers/update/:id",
@@ -1194,7 +1290,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "7"
+									"value": "16"
 								}
 							]
 						}
@@ -1209,7 +1305,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODc5NDk2OSwiZXhwIjoxNzU5Mzk5NzY5fQ.Hj84J4-Z-7Sc-xKzZHDVDRCY_M9vjZK0t5nJDW6Azc8",
 									"type": "string"
 								}
 							]
@@ -1232,7 +1328,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "7"
+									"value": "16"
 								}
 							]
 						}
@@ -1252,7 +1348,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcwNjQ0MCwiZXhwIjoxNzU5MzExMjQwfQ.os8jQwkKEIJCwPaPx3GDhAvh4XRYWPucWl0_pZu6SqQ",
 									"type": "string"
 								}
 							]
@@ -1267,7 +1363,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"sale_title\": \"SPORTS\"\r\n}\r\n",
+							"raw": "{\r\n  \"sale_title\": \"Festive Offer - 70% OFF\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1332,60 +1428,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Sale",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"sale_title\": \"Mega Sale\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5000/api/flashsales/update/:id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"flashsales",
-								"update",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "1"
+									"value": "11"
 								}
 							]
 						}
@@ -1400,7 +1443,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcwNjQ0MCwiZXhwIjoxNzU5MzExMjQwfQ.os8jQwkKEIJCwPaPx3GDhAvh4XRYWPucWl0_pZu6SqQ",
 									"type": "string"
 								}
 							]
@@ -1434,7 +1477,60 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcwNjQ0MCwiZXhwIjoxNzU5MzExMjQwfQ.os8jQwkKEIJCwPaPx3GDhAvh4XRYWPucWl0_pZu6SqQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sale_title\": \"Festive Offer - 80% OFF\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/flashsales/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"flashsales",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
 								}
 							]
 						}
@@ -1454,7 +1550,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -1534,7 +1630,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "4"
+									"value": "5"
 								}
 							]
 						}
@@ -1549,7 +1645,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -1572,7 +1668,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "4"
+									"value": "5"
 								}
 							]
 						}
@@ -1592,7 +1688,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -1686,7 +1782,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAxMjMyNSwiZXhwIjoxNzU4NjE3MTI1fQ.rCOPtu-oeQnKN8w2Ar_jUdeHLiqGvnh_Ieq8GfkXJoQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -1729,7 +1825,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MTEyODE5LCJleHAiOjE3NTg3MTc2MTl9.918tKaR2_Szrhf2u-RhzBao7GxRpgyAWPZU5q6YeLzI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg2NDU0LCJleHAiOjE3NTk0OTEyNTR9.iVOYohFShzt-AoK3-mnQlKWKnnYTAiThhY8N5Bv4j5A",
 									"type": "string"
 								}
 							]
@@ -1775,7 +1871,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDI2MTkxLCJleHAiOjE3NTg2MzA5OTF9.ANHXwOe9ZhrM4V6i9VgRCctT0OELslGT7xyslCP8fR0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg2NDU0LCJleHAiOjE3NTk0OTEyNTR9.iVOYohFShzt-AoK3-mnQlKWKnnYTAiThhY8N5Bv4j5A",
 									"type": "string"
 								}
 							]
@@ -1806,7 +1902,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDI2MTkxLCJleHAiOjE3NTg2MzA5OTF9.ANHXwOe9ZhrM4V6i9VgRCctT0OELslGT7xyslCP8fR0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg2NDU0LCJleHAiOjE3NTk0OTEyNTR9.iVOYohFShzt-AoK3-mnQlKWKnnYTAiThhY8N5Bv4j5A",
 									"type": "string"
 								}
 							]
@@ -1843,7 +1939,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDI2MTkxLCJleHAiOjE3NTg2MzA5OTF9.ANHXwOe9ZhrM4V6i9VgRCctT0OELslGT7xyslCP8fR0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg2NDU0LCJleHAiOjE3NTk0OTEyNTR9.iVOYohFShzt-AoK3-mnQlKWKnnYTAiThhY8N5Bv4j5A",
 									"type": "string"
 								}
 							]
@@ -1971,7 +2067,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAyODY1MiwiZXhwIjoxNzU4NjMzNDUyfQ.TWp2SsEYXbvY9nP5nxVF3YOajmcg802FtDyQ_HHXwbg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -2017,7 +2113,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAyODY1MiwiZXhwIjoxNzU4NjMzNDUyfQ.TWp2SsEYXbvY9nP5nxVF3YOajmcg802FtDyQ_HHXwbg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -2085,7 +2181,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAyODY1MiwiZXhwIjoxNzU4NjMzNDUyfQ.TWp2SsEYXbvY9nP5nxVF3YOajmcg802FtDyQ_HHXwbg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg2NjE4NCwiZXhwIjoxNzU5NDcwOTg0fQ.600UXzCY3FXi7b4-qEo0J_4olPrYg5aRJlyzaYrjj5k",
 									"type": "string"
 								}
 							]
@@ -2124,7 +2220,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "8"
+									"value": "9"
 								}
 							]
 						}
@@ -2144,7 +2240,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MTE2ODY0LCJleHAiOjE3NTg3MjE2NjR9.EVS53rNr6BSlNsdYvNUj9DsRQ45e3VhPsWSJc4Fl1Eg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg1MjQzLCJleHAiOjE3NTk0OTAwNDN9.-TuBa2IksLnZn2cSYOlUL4kz4FGrvSjVp4Kq-XxUVvI",
 									"type": "string"
 								}
 							]
@@ -2159,7 +2255,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"bank_id\": 6,\r\n  \"method_id\": 1,\r\n  \"account_number\": \"209010304050607\",\r\n  \"account_label\": \"Savings Account\",\r\n  \"is_default\": true\r\n}\r\n",
+							"raw": "{\r\n  \"bank_id\": 6,\r\n  \"method_id\": 1,\r\n  \"account_number\": \"209010304050152\",\r\n  \"account_label\": \"Savings Account\",\r\n  \"is_default\": true\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2190,7 +2286,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDMwMjYwLCJleHAiOjE3NTg2MzUwNjB9.OiXC-ENBTm4hJQjhcaRdbJLqX7Xa1vCaZTw0FLlTWN8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg1MjQzLCJleHAiOjE3NTk0OTAwNDN9.-TuBa2IksLnZn2cSYOlUL4kz4FGrvSjVp4Kq-XxUVvI",
 									"type": "string"
 								}
 							]
@@ -2221,7 +2317,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDMwMjYwLCJleHAiOjE3NTg2MzUwNjB9.OiXC-ENBTm4hJQjhcaRdbJLqX7Xa1vCaZTw0FLlTWN8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg1MjQzLCJleHAiOjE3NTk0OTAwNDN9.-TuBa2IksLnZn2cSYOlUL4kz4FGrvSjVp4Kq-XxUVvI",
 									"type": "string"
 								}
 							]
@@ -2243,7 +2339,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "3"
+									"value": "2"
 								}
 							]
 						}
@@ -2258,7 +2354,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MDMwMjYwLCJleHAiOjE3NTg2MzUwNjB9.OiXC-ENBTm4hJQjhcaRdbJLqX7Xa1vCaZTw0FLlTWN8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg1MjQzLCJleHAiOjE3NTk0OTAwNDN9.-TuBa2IksLnZn2cSYOlUL4kz4FGrvSjVp4Kq-XxUVvI",
 									"type": "string"
 								}
 							]
@@ -2290,7 +2386,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "4"
+									"value": "2"
 								}
 							]
 						}
@@ -2343,7 +2439,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODExNzM5MSwiZXhwIjoxNzU4NzIyMTkxfQ.sAFDzychIiCGbi5I_dbykOr3eaNVZNOmws-w5yAzoQ4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODg4NjMyOCwiZXhwIjoxNzU5NDkxMTI4fQ.LbXsqv-EysRqj938HCGv8J1HFddolne_OSXvhYMmKHU",
 									"type": "string"
 								}
 							]
@@ -2380,7 +2476,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcyMTk5OSwiZXhwIjoxNzU5MzI2Nzk5fQ.FOEx1WToZZMYNHAIulgJDGsFZo68Lp_wvUk1UN5PsMQ",
 									"type": "string"
 								}
 							]
@@ -2395,7 +2491,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"sale_id\": 3,              \r\n  \"shoes_id\": 3,            \r\n  \"discount\": 40.00,        \r\n  \"start_time\": \"2025-09-17 10:00:00\",\r\n  \"end_time\": \"2025-09-17 23:59:59\",\r\n  \"is_active\": true      \r\n}\r\n",
+							"raw": "{\r\n  \"sale_id\": 3,              \r\n  \"shoes_id\": 3,            \r\n  \"discount\": 40.00,        \r\n  \"start_time\": \"2025-09-24 10:00:00\",\r\n  \"end_time\": \"2025-09-24 23:59:59\",\r\n  \"is_active\": true      \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2426,7 +2522,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcyMTk5OSwiZXhwIjoxNzU5MzI2Nzk5fQ.FOEx1WToZZMYNHAIulgJDGsFZo68Lp_wvUk1UN5PsMQ",
 									"type": "string"
 								}
 							]
@@ -2457,7 +2553,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcyMTk5OSwiZXhwIjoxNzU5MzI2Nzk5fQ.FOEx1WToZZMYNHAIulgJDGsFZo68Lp_wvUk1UN5PsMQ",
 									"type": "string"
 								}
 							]
@@ -2479,7 +2575,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "10"
 								}
 							]
 						}
@@ -2494,7 +2590,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcyMTk5OSwiZXhwIjoxNzU5MzI2Nzk5fQ.FOEx1WToZZMYNHAIulgJDGsFZo68Lp_wvUk1UN5PsMQ",
 									"type": "string"
 								}
 							]
@@ -2517,7 +2613,7 @@
 							"variable": [
 								{
 									"key": "saleTitle",
-									"value": "TODAY'S PICK"
+									"value": "Diwali Mega Flash sale"
 								}
 							]
 						}
@@ -2532,7 +2628,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcyMTk5OSwiZXhwIjoxNzU5MzI2Nzk5fQ.FOEx1WToZZMYNHAIulgJDGsFZo68Lp_wvUk1UN5PsMQ",
 									"type": "string"
 								}
 							]
@@ -2541,7 +2637,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"sale_id\": 3,              \r\n  \"shoes_id\": 3,            \r\n  \"discount\": 30.00,        \r\n  \"start_time\": \"2025-09-17 10:00:00\",\r\n  \"end_time\": \"2025-09-17 23:59:59\",\r\n  \"is_active\": true      \r\n}\r\n",
+							"raw": "{\r\n  \"sale_id\": 5,              \r\n  \"shoes_id\": 3,            \r\n  \"discount\": 30.00,        \r\n  \"start_time\": \"2025-09-25 10:00:00\",\r\n  \"end_time\": \"2025-09-25 23:59:59\",\r\n  \"is_active\": true      \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2564,7 +2660,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "6"
+									"value": "10"
 								}
 							]
 						}
@@ -2579,7 +2675,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODcyMTk5OSwiZXhwIjoxNzU5MzI2Nzk5fQ.FOEx1WToZZMYNHAIulgJDGsFZo68Lp_wvUk1UN5PsMQ",
 									"type": "string"
 								}
 							]
@@ -2602,8 +2698,48 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "6"
+									"value": "12"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODEwMTU3NSwiZXhwIjoxNzU4NzA2Mzc1fQ.Vop92qAGy3LqhV1xiGtxacR3KiXwjSisHSqIe4wQx3k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{             \r\n  \"shoes_id\": 3,            \r\n  \"discount\": 30.00,        \r\n  \"start_time\": \"2025-09-24 10:00:00\",\r\n  \"end_time\": \"2025-09-24 23:59:59\",\r\n  \"is_active\": true      \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/flash-sale-items/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"flash-sale-items",
+								"add"
 							]
 						}
 					},
@@ -2622,7 +2758,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MTk4NTAxLCJleHAiOjE3NTg4MDMzMDF9.6PFfLto8eD2f1mGwendiyH3bDG7arkKShtdSmAz5c5k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODc5MDY1LCJleHAiOjE3NTk0ODM4NjV9.9sYf4BiJsD3MmLIr88-CfoXak2wKqGtmreJv0tVYcTU",
 									"type": "string"
 								}
 							]
@@ -2631,7 +2767,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"method_id\": 2,\r\n  \"card_number\": \"5050 4696 4582 6352\",\r\n  \"cardholder_name\": \"Rahul Patel\",\r\n  \"expiry_date\": \"10/2029\",\r\n  \"security_code\": \"123\",\r\n  \"billing_address\": \"Katargam, Surat, India\",\r\n  \"is_default\": false\r\n}\r\n",
+							"raw": "{\r\n  \"method_id\": 2,\r\n  \"card_number\": \"5050 4696 4582 6452\",\r\n  \"cardholder_name\": \"Rahul Patel\",\r\n  \"expiry_date\": \"10/2029\",\r\n  \"security_code\": \"123\",\r\n  \"billing_address\": \"Katargam, Surat, India\",\r\n  \"is_default\": false\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2703,7 +2839,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MTk4NTAxLCJleHAiOjE3NTg4MDMzMDF9.6PFfLto8eD2f1mGwendiyH3bDG7arkKShtdSmAz5c5k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODc5MDY1LCJleHAiOjE3NTk0ODM4NjV9.9sYf4BiJsD3MmLIr88-CfoXak2wKqGtmreJv0tVYcTU",
 									"type": "string"
 								}
 							]
@@ -2729,7 +2865,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "4"
+									"value": "7"
 								}
 							]
 						}
@@ -2744,7 +2880,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4MTk4NTAxLCJleHAiOjE3NTg4MDMzMDF9.6PFfLto8eD2f1mGwendiyH3bDG7arkKShtdSmAz5c5k",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODc5MDY1LCJleHAiOjE3NTk0ODM4NjV9.9sYf4BiJsD3MmLIr88-CfoXak2wKqGtmreJv0tVYcTU",
 									"type": "string"
 								}
 							]
@@ -2777,7 +2913,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "4"
+									"value": "7"
 								}
 							]
 						}
@@ -2880,7 +3016,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4Mjc0ODkxLCJleHAiOjE3NTg4Nzk2OTF9.aEvR2dTjajsL7pw7pVIMcbBPq01dUtPyVNn-0yzZ6_w",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODg1MjQzLCJleHAiOjE3NTk0OTAwNDN9.-TuBa2IksLnZn2cSYOlUL4kz4FGrvSjVp4Kq-XxUVvI",
 									"type": "string"
 								}
 							]
@@ -2986,7 +3122,7 @@
 							"variable": [
 								{
 									"key": "address_id",
-									"value": "2"
+									"value": "6"
 								}
 							]
 						}
@@ -3091,7 +3227,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"shoes_id\": 6,\r\n  \"shoe_name\": \"RS-X3\",\r\n  \"payment_method\": \"wallet\",\r\n  \"total_amount\": 450\r\n}\r\n",
+							"raw": "{\r\n  \"shoes_id\": 3,\r\n  \"voucher_id\": 2,\r\n  \"shoe_name\": \"ADIDAS ULTRABOOST\",\r\n  \"payment_method\": \"bank_transfer\",\r\n  \"total_amount\": 1300\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3117,8 +3253,31 @@
 				{
 					"name": "Get Orders Of User",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4Mjg1NjkzLCJleHAiOjE3NTg4OTA0OTN9.qkYRKalRKlMQLpgRIpXwQhUggeHCUu2VLntbUUA0rj4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/orders/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"my"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3130,7 +3289,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4Mjg1NjkzLCJleHAiOjE3NTg4OTA0OTN9.qkYRKalRKlMQLpgRIpXwQhUggeHCUu2VLntbUUA0rj4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYwMDEyODI1LCJleHAiOjE3NjA2MTc2MjV9.6nWzT1KdNCZopj63sgFn6dldnV6JZagnRKdq_HuYvyo",
 									"type": "string"
 								}
 							]
@@ -3152,7 +3311,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "11"
 								}
 							]
 						}
@@ -3205,7 +3364,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODI4NjE4MSwiZXhwIjoxNzU4ODkwOTgxfQ.wwiuqNqn9XCL8ddzn2IGD8vPBNkhb2mJyV4b5pj7dik",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDAxMzE4NiwiZXhwIjoxNzYwNjE3OTg2fQ.O3NCQu7yU8Wc-ZOeT33nOiBaqqmXwIGcTAFwFfyCqfE",
 									"type": "string"
 								}
 							]
@@ -3275,6 +3434,863 @@
 								{
 									"key": "order_id",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shoes Image Management",
+			"item": [
+				{
+					"name": "Add Shoes Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODI4NjE4MSwiZXhwIjoxNzU4ODkwOTgxfQ.wwiuqNqn9XCL8ddzn2IGD8vPBNkhb2mJyV4b5pj7dik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shoes_id\": 2,\r\n    \"extra_image\": \"../assets/S3.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/shoe-images/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"shoe-images",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Shoes Images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODI4NjE4MSwiZXhwIjoxNzU4ODkwOTgxfQ.wwiuqNqn9XCL8ddzn2IGD8vPBNkhb2mJyV4b5pj7dik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/shoe-images/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"shoe-images",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shoes Image By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODU0OTUzMywiZXhwIjoxNzU5MTU0MzMzfQ.yveaU5zwyHL1dg1gqBVEOeij7v-k18sKZJu1olldCeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/shoe-images/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"shoe-images",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shoes Images By Shoes Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODU0OTUzMywiZXhwIjoxNzU5MTU0MzMzfQ.yveaU5zwyHL1dg1gqBVEOeij7v-k18sKZJu1olldCeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shoes_id\": 2,\r\n    \"extra_image\": \"../assets/S4.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/shoe-images/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"shoe-images",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Shoes Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODU0OTUzMywiZXhwIjoxNzU5MTU0MzMzfQ.yveaU5zwyHL1dg1gqBVEOeij7v-k18sKZJu1olldCeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/shoe-images/delete/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"shoe-images",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Management",
+			"item": [
+				{
+					"name": "Create Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODU0OTUzMywiZXhwIjoxNzU5MTU0MzMzfQ.yveaU5zwyHL1dg1gqBVEOeij7v-k18sKZJu1olldCeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 11,\r\n    \"method_id\": 2,\r\n    \"amount\": 1300,\r\n    \"status\": \"cancelled\",\r\n    \"transaction_ref\": \"TXN895462314\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/payments/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"payments",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Payments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYwMzU4MjAyLCJleHAiOjE3NjA5NjMwMDJ9.QRnUohwr-6Vjan_xWLLYdulWH87xYa1CFxkr3wHKCLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/payments/my-payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"payments",
+								"my-payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Payments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1NzYxMiwiZXhwIjoxNzYwOTYyNDEyfQ.000jRYm3UrLaQ5-VCZhVJcP1BOv_KervEZ9gMtFM_xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 11,\r\n    \"method_id\": 2,\r\n    \"amount\": 1300,\r\n    \"status\": \"cancelled\",\r\n    \"transaction_ref\": \"TXN895462314\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/payments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"payments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODU0OTUzMywiZXhwIjoxNzU5MTU0MzMzfQ.yveaU5zwyHL1dg1gqBVEOeij7v-k18sKZJu1olldCeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 11,\r\n    \"method_id\": 2,\r\n    \"amount\": 1300,\r\n    \"status\": \"cancelled\",\r\n    \"transaction_ref\": \"TXN895462314\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/payments/:payment_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"payments",
+								":payment_id"
+							],
+							"variable": [
+								{
+									"key": "payment_id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1ODUxNywiZXhwIjoxNzYwOTYzMzE3fQ.TFqyEuCEY3rzhtULkubS-7VyM4bOgodXyODQ2cnTK9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 9,\r\n    \"method_id\": 3,\r\n    \"amount\": 1200,\r\n    \"status\": \"completed\",\r\n    \"transaction_ref\": \"TXN954123851\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/payments/update/:payment_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"payments",
+								"update",
+								":payment_id"
+							],
+							"variable": [
+								{
+									"key": "payment_id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODU0OTUzMywiZXhwIjoxNzU5MTU0MzMzfQ.yveaU5zwyHL1dg1gqBVEOeij7v-k18sKZJu1olldCeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 11,\r\n    \"method_id\": 3,\r\n    \"amount\": 1300,\r\n    \"status\": \"completed\",\r\n    \"transaction_ref\": \"TXN562384197\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/payments/delete/:payment_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"payments",
+								"delete",
+								":payment_id"
+							],
+							"variable": [
+								{
+									"key": "payment_id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review Management",
+			"item": [
+				{
+					"name": "Add Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shoes_id\": 6,\r\n  \"review_text\": \"Poor Product\",\r\n  \"rating\": 3.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get review By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/:review_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								":review_id"
+							],
+							"variable": [
+								{
+									"key": "review_id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reviews For a Shoes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/shoe/:shoes_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"shoe",
+								":shoes_id"
+							],
+							"variable": [
+								{
+									"key": "shoes_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Reviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/user/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"user",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stats For a Shoe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/stats/shoe/:shoes_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"stats",
+								"shoe",
+								":shoes_id"
+							],
+							"variable": [
+								{
+									"key": "shoes_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Overall Stats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/stats/overall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"stats",
+								"overall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"review_text\": \"After 1 month of use, still holding up very well!\",\r\n  \"rating\": 4\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/update/:review_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"update",
+								":review_id"
+							],
+							"variable": [
+								{
+									"key": "review_id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU4ODA2NTE2LCJleHAiOjE3NTk0MTEzMTZ9.McQW6hI7wH7fL03KAnmcSEW0PwCDuWlT6Pgv5A5RQ70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/delete/:review_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"delete",
+								":review_id"
+							],
+							"variable": [
+								{
+									"key": "review_id",
+									"value": "9"
 								}
 							]
 						}

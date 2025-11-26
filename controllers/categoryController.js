@@ -125,7 +125,7 @@ exports.createCategory = async (req, res) => {
 exports.getAllCategories = async (req, res) => {
   try {
     const categories = await categoryModel.getAllCategories();
-    console.log("Categories from DB:", categories); // <--- add this
+    // console.log("Categories from DB:", categories); // <--- add this
     return helpers.response.success(res, 200, "Categories fetched successfully", categories);
   } catch (error) {
     console.error("Get All Categories Error:", error);

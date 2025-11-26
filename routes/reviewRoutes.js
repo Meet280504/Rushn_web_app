@@ -9,7 +9,7 @@ router.get("/shoe/:shoes_id", reviewController.getReviewsByShoe); // GET reviews
 router.get("/stats/shoe/:shoes_id", reviewController.getShoeStats); // GET stats for a shoe
 router.get("/stats/overall", reviewController.getOverallStats);     // GET overall stats
 
-// Protected routes (need login)
+// Protected routes (need login) 
 router.get("/user/my", checkTokenExpiry, checkTokenRole("user"), reviewController.getReviewsByUser); // GET my reviews
 router.post("/add", checkTokenExpiry, checkTokenRole("user"), reviewController.createReview);           // CREATE review
 router.put("/update/:review_id", checkTokenExpiry, checkTokenRole("admin"), reviewController.updateReview);  // UPDATE review

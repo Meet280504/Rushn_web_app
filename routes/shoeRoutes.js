@@ -18,8 +18,8 @@ router.get("/shoes/:shoes_id", shoeController.getShoeById);
 router.get("/shoes/category/:category_id", shoeController.getShoesByCategory);
 
 // Protected (only logged-in users can create/update/delete)
-router.post("/add", checkTokenExpiry, upload.single("image"), checkTokenRole(["admin", "editor"]), shoeController.createShoe);
-router.put("/update/:shoes_id", checkTokenExpiry, upload.single("image"), checkTokenRole(["admin", "editor"]), shoeController.updateShoe);
-router.delete("/delete/:shoes_id", checkTokenExpiry, checkTokenRole(["admin"]), shoeController.deleteShoe);
+router.post("/add", checkTokenExpiry, upload.single("image"), checkTokenRole("admin"), shoeController.createShoe);
+router.put("/update/:shoes_id", checkTokenExpiry, checkTokenRole("admin"), upload.single("image"), shoeController.updateShoe);
+router.delete("/delete/:shoes_id", checkTokenExpiry, checkTokenRole("admin"), shoeController.deleteShoe);
 
 module.exports = router;

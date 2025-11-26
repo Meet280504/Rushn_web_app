@@ -71,7 +71,22 @@ exports.createShoe = async (req, res) => {
 // Update shoe
 exports.updateShoe = async (req, res) => {
   try {
-    const userId = req.user.userId; // 👈 from token
+    const userId = req.user.userId; // 👈 from 
+
+    // Extract data from req.body
+    const {
+      category_id,
+      brand_name,
+      brand_logo,
+      shoe_name,
+      shoe_description,
+      original_price,
+      price,
+      discount
+    } = req.body;
+
+    // Use new uploaded image OR fallback to existing image_url
+    const image_url = req.file ? `/uploads/${req.file.filename}` : req.body.image_url;
 
     const updatedData = {
       category_id,
@@ -82,9 +97,9 @@ exports.updateShoe = async (req, res) => {
       original_price,
       price,
       discount: discount || 0,
-      image_url: req.file ? `/uploads/${req.file.filename}` : null, // Use new upload or existing URL
+      image_url,
       user_id: userId,
-      shoes_id: req.params.shoes_id,
+      // shoes_id: req.params.shoes_id,
     };
 
     const updated = await Shoe.update(req.params.shoes_id, updatedData);
